@@ -10,6 +10,7 @@ tomato       # 20-minute timer with sound
 tomato 1     # 1-minute timer with sound
 tomato -s    # 20-minute timer without sound
 tomato 1 -s  # 1-minute timer without sound
+tomato --help # show all options
 ```
 
 Press `Ctrl-C` to cancel a running timer.

@@ -4,6 +4,23 @@
 #   tomato             # 20 minutes
 #   tomato 1           # 1 minute
 #   tomato 1 -s        # 1 minute, silent
+#   tomato --help      # show all options
+
+tomato_help() {
+    printf '%s\n' \
+        'Usage: tomato [minutes] [-s|--silent]' \
+        '' \
+        'Start a 20-minute timer, or provide a positive whole number of minutes.' \
+        '' \
+        'Options:' \
+        '  -s, --silent   Disable the sound when the timer ends' \
+        '  -h, --help     Show this help message' \
+        '' \
+        'Examples:' \
+        '  tomato' \
+        '  tomato 1' \
+        '  tomato 1 --silent'
+}
 
 tomato() {
     local duration_minutes=20
@@ -14,6 +31,10 @@ tomato() {
     while (( $# > 0 )); do
         arg=$1
         case "$arg" in
+            -h|--help)
+                tomato_help
+                return 0
+                ;;
             -s|--silent)
                 silent=1
                 ;;
