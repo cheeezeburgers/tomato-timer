@@ -6,10 +6,10 @@ runs, then reminds you to take a break, drink water, and go to the toilet.
 ## Usage
 
 ```bash
-tomato       # 20-minute timer with sound
-tomato 1     # 1-minute timer with sound
-tomato -s    # 20-minute timer without sound
-tomato 1 -s  # 1-minute timer without sound
+tomato        # 20-minute timer with sound
+tomato 1      # 1-minute timer with sound
+tomato -s     # 20-minute timer without sound
+tomato 1 -s   # 1-minute timer without sound
 tomato --help # show all options
 ```
 
@@ -17,24 +17,33 @@ Press `Ctrl-C` to cancel a running timer.
 
 ## Install
 
-From this directory, install the script as a command in `~/.local/bin`:
+Clone the repository and run:
 
 ```bash
-mkdir -p "$HOME/.local/bin"
-cp tomato.sh "$HOME/.local/bin/tomato"
-chmod +x "$HOME/.local/bin/tomato"
+./install.sh
 ```
 
-Add the directory to your `PATH` if it is not already there. For zsh (the
-default shell on macOS):
+The installer copies `tomato` to:
+
+```text
+~/.local/bin/tomato
+```
+
+If `~/.local/bin` is not already in your `PATH`, the installer will show
+instructions for adding it.
+
+You can then run `tomato` from any terminal.
+
+## Update
+
+Pull the latest changes and run the installer again:
 
 ```bash
-printf '\nexport PATH="$HOME/.local/bin:$PATH"\n' >> "$HOME/.zshrc"
-source "$HOME/.zshrc"
+git pull
+./install.sh
 ```
 
-For Bash, add the same line to `~/.bashrc` and run `source ~/.bashrc`.
+## Sound
 
-You can now run `tomato` from any terminal. On macOS, the timer uses the
-system `Glass.aiff` sound when sound is enabled; the terminal bell is used as
-a fallback.
+On macOS, Tomato uses the system `Glass.aiff` sound when the timer finishes.
+The terminal bell is used as a fallback.
