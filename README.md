@@ -1,8 +1,8 @@
 # Tomato timer
 
-![tomato-hero-img](assets/tomato-hero-img.png)
-
 A small Bash Pomodoro-style timer. It displays a red ASCII tomato while it runs, then reminds you to take a break, drink water, and go to the toilet.
+
+![tomato-hero-img](assets/tomato-hero-img.png)
 
 ## Usage
 
